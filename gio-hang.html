@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ Hàng - Pet Shop</title>
+  
+    <link rel="stylesheet" href="gio-hang.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="cart-header">
+            <h1>Giỏ hàng của bạn</h1>
+            <a href="index.html" class="back-link">← Mua thêm đồ cho thú cưng</a>
+        </header>
+
+        <div class="cart-layout">
+            <div class="cart-left">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-table-body"></tbody>
+                </table>
+            </div>
+
+            <div class="cart-right">
+                <div class="summary-box">
+                    <h3>Tóm tắt đơn hàng</h3>
+                    <div class="summary-item"><span>Tạm tính:</span><span id="res-subtotal">0đ</span></div>
+                    <div class="summary-item"><span>Phí ship:</span><span style="color:green">Miễn phí</span></div>
+                    <hr>
+                    <div class="summary-item total"><span>Tổng cộng:</span><span id="res-total">0đ</span></div>
+                    <button class="btn-checkout" onclick="openPaymentModal()">THANH TOÁN NGAY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="p-modal">
+        <div class="p-modal-content">
+            <span class="p-close" onclick="closePaymentModal()">&times;</span>
+            <h2>Thông tin đặt hàng</h2>
+            <div class="p-form">
+                <input type="text" id="cus-name" placeholder="Họ và tên của bạn">
+                <input type="tel" id="cus-phone" placeholder="Số điện thoại nhận hàng">
+                <textarea id="cus-addr" placeholder="Địa chỉ giao hàng (Số nhà, tên đường...)"></textarea>
+                <div class="p-method">
+                    <p>Phương thức: <b>Thanh toán khi nhận hàng (COD)</b></p>
+                </div>
+                <button class="btn-confirm" onclick="confirmOrder()">XÁC NHẬN ĐẶT HÀNG</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="gio-hang.js"></script>
+</body>
+
+</html>

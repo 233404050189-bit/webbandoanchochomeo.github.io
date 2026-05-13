@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dành cho mèo</title>
+
+
+
+    <link rel="stylesheet" href="danh-muc.css">
+    <link rel="stylesheet" href="hang.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.webp" alt="PetShop Logo">
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Tìm món ăn...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn">
+                    <img src="images/tinnhan.png" class="nav-img">
+                    <span>Hỗ trợ 24/7</span>
+                    <span class="chevron">⌵</span>
+                </div>
+                <div class="dropdown-content">
+                    <p class="title-text">Nhận hỗ trợ từ các chuyên gia của chúng tôi 24/7.</p>
+
+                    <div class="support-cards-wrapper">
+                        <a href="https://zalo.me/0386559999" class="s-card chat" target="_blank">
+                            <div class="s-icon">
+                                <span class="pulse-wave"></span>
+                                <img src="images/tinnhan.png" class="item-img">
+                            </div>
+                            <div class="s-info">
+                                <span class="s-label">Chat ngay</span>
+                                <span class="s-status">Online trực tuyến</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:0386559999" class="s-card phone">
+                            <div class="s-icon">
+                                <img src="images/dienthoai.png" class="item-img phone-ring">
+                            </div>
+                            <div class="s-info">
+                                <span class="s-label">Gọi hotline</span>
+                                <span class="s-status">0386.559.999</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img src="images/dangnhap.png" class="user-avatar">
+                    <span class="btn-text">Tài khoản ⌵</span>
+                </button>
+
+                <div class="dropdown-content">
+
+
+                    <a href="dang-nhap.html" class="auth-btn login-btn">Đăng nhập</a>
+
+                    <a href="dang-ky.html" class="auth-btn register-btn">Tạo tài khoản</a>
+                </div>
+            </div>
+
+            <div class="nav-container">
+                <a href="gio-hang.html" class="cart-btn">
+                    <div class="cart-icon-wrapper">
+                        <span style="font-size: 24px;">🛒</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <span class="cart-label">Giỏ hàng</span>
+                </a>
+            </div>
+
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-menu">
+                <li class="has-submenu">
+                    <a href="san-pham-noi-bat.html">Sản phẩm nổi bật ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="san-pham-noi-bat.html#ban-chay">Sản phẩm bán chạy</a></li>
+                        <li><a href="san-pham-noi-bat.html#hang-moi">Hàng mới về</a></li>
+                        <li><a href="san-pham-noi-bat.html#khuyen-mai">Khuyến mãi sốc</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="danh-cho-cho.html">Dành cho chó ⌵</a>
+                    <div class="submenu mega-menu">
+                        <div class="mega-col">
+                            <span class="mega-title">Thức ăn</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#thuc-an-hat">Thức ăn hạt</a></li>
+                                <li><a href="danh-cho-cho.html#pate">Pate và thức ăn ướt</a></li>
+                                <li><a href="danh-cho-cho.html#thuc-an-tuoi">Thức ăn tươi</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Đồ ăn vặt & Thưởng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#banh-thuong">Bánh thưởng</a></li>
+                                <li><a href="danh-cho-cho.html#thit-say">Thịt sấy khô</a></li>
+                                <li><a href="danh-cho-cho.html#thanh-gam">Thanh gặm sạch răng</a></li>
+                                <li><a href="danh-cho-cho.html#sup-thuong">Súp thưởng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">TPCN & Dinh dưỡng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#gel">Gel dinh dưỡng</a></li>
+                                <li><a href="danh-cho-cho.html#dau-ca">Dầu cá (Omega-3)</a></li>
+                                <li><a href="danh-cho-cho.html#canxi">Canxi & Vitamin</a></li>
+                                <li><a href="danh-cho-cho.html#men-vi-sinh">Men vi sinh</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Sữa và đồ uống</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#sua-bot">Sữa bột</a></li>
+                                <li><a href="danh-cho-cho.html#sua-tuoi">Sữa tươi tiệt trùng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Phụ kiện</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#bat-an">Bát ăn</a></li>
+                                <li><a href="danh-cho-cho.html#may-loc">Máy lọc nước tự động</a></li>
+                                <li><a href="danh-cho-cho.html#may-hen-gio">Máy hẹn giờ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="danh-cho-meo.html">Dành cho mèo ⌵</a>
+                    <div class="submenu mega-menu">
+                        <div class="mega-col">
+                            <span class="mega-title">Thức ăn</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#thuc-an-hat">Thức ăn hạt</a></li>
+                                <li><a href="danh-cho-meo.html#pate">Pate và thức ăn ướt</a></li>
+                                <li><a href="danh-cho-meo.html#thuc-an-tuoi">Thức ăn tươi</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Đồ ăn vặt & Thưởng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#banh-thuong">Bánh thưởng</a></li>
+                                <li><a href="danh-cho-meo.html#thit-say">Thịt sấy khô</a></li>
+                                <li><a href="danh-cho-meo.html#thanh-gam">Thanh gặm sạch răng</a></li>
+                                <li><a href="danh-cho-meo.html#sup-thuong">Súp thưởng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">TPCN & Dinh dưỡng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#gel">Gel dinh dưỡng</a></li>
+                                <li><a href="danh-cho-meo.html#dau-ca">Dầu cá (Omega-3)</a></li>
+                                <li><a href="danh-cho-meo.html#canxi">Canxi & Vitamin</a></li>
+                                <li><a href="danh-cho-meo.html#men-vi-sinh">Men vi sinh</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Sữa và đồ uống</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#sua-bot">Sữa bột</a></li>
+                                <li><a href="danh-cho-meo.html#sua-tuoi">Sữa tươi tiệt trùng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Phụ kiện</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#bat-an">Bát ăn</a></li>
+                                <li><a href="danh-cho-meo.html#may-loc">Máy lọc nước tự động</a></li>
+                                <li><a href="danh-cho-meo.html#may-hen-gio">Máy hẹn giờ</a></li>
+                            </ul>
+                        </div>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="pettag.html">Pettag ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="pettag.html#the-ten">Thẻ tên chó/mèo</a></li>
+                        <li><a href="pettag.html#vong-co">Vòng cổ khắc tên</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="dich-vu-spa.html">Dịch vụ spa ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="dich-vu-spa.html#tam-cat">Tắm & cắt spa chó/mèo</a></li>
+                        <li><a href="dich-vu-spa.html#dua-don">Dịch vụ đưa đón</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="khuyen-mai.html">Khuyến mãi ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="khuyen-mai.html#combo">Mua 1 tặng 1</a></li>
+                        <li><a href="khuyen-mai.html#dung-thu">Hàng dùng thử</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="lien-he.html">Liên hệ đặt lịch</a></li>
+
+
+                <li><span class="free-ship-btn">Miễn phí vận chuyển đơn trên $35</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+
+        <main class="container-catalog">
+            <section id="thuc-an-hat" class="product-section">
+                <h2 class="section-title">Thức ăn hạt</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Hạt mèo Cat'eyes" data-price="300.000đ"
+                        data-desc="Túi 1kg dành cho mèo mọi lứa tuổi, cung cấp dinh dưỡng cân đối với protein từ thịt gà và cá, giúp duy trì sức khỏe và năng lượng cho mèo yêu của bạn.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/57.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/57.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt mèo Cat'eyes</h3>
+                            <p class="price">300.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Hạt Zoicat cho mèo" data-price="320.000đ"
+                        data-desc="Hạt xuất khẩu từ Nhật Bản, túi 1kg, giàu protein từ cá và thịt gà, bổ sung vitamin và khoáng chất giúp mèo phát triển khỏe mạnh và năng động.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/58.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/58.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt Zoicat cho mèo</h3>
+                            <p class="price">320.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Hạt Cat Licious vị cá biển" data-price="300.000đ"
+                        data-desc="Túi 1kg, hạt dinh dưỡng cao với protein từ cá biển, bổ sung omega-3 và vitamin giúp mèo duy trì sức khỏe lông mượt và năng lượng dồi dào.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/59.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/59.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt Cat Licious vị cá biển</h3>
+                            <p class="price">300.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Hạt Catsrang vị cá biển" data-price="200.000đ"
+                        data-desc="Túi 1kg, hạt dinh dưỡng cao với protein từ cá biển, bổ sung omega-3 và vitamin giúp mèo duy trì sức khỏe lông mượt và năng lượng dồi dào.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/60.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/60.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt Catsrang vị cá biển</h3>
+                            <p class="price">200.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="pate" class="product-section">
+                <h2 class="section-title">Pate và thức ăn ướt</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Pate Ragelos" data-price="20.000đ"
+                        data-desc="Quý khách chọn vị thì liên hệ số điện thoại 0386559999 để được tư vấn và đặt hàng. Pate Ragelos với hương vị thơm ngon, giàu dinh dưỡng, là lựa chọn hoàn hảo cho bữa ăn của mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/61.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/61.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Pate Ragelos</h3>
+                            <p class="price">20.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Pate Meowow" data-price="25.000đ"
+                        data-desc="Quý khách chọn vị thì liên hệ số điện thoại 0386559999 để được tư vấn và đặt hàng. Pate Meowow với hương vị thơm ngon, giàu dinh dưỡng, là lựa chọn hoàn hảo cho bữa ăn của mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/62.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/62.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Pate Meowow</h3>
+                            <p class="price">25.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Pate Mao-O" data-price="13.000đ"
+                        data-desc="Phù hợp cho mèo kén ăn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/63.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/63.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Pate Mao-O</h3>
+                            <p class="price">13.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="thuc-an-tuoi" class="product-section">
+                <h2 class="section-title">Thức ăn tươi</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Thức ăn tươi Raw Food cho mèo" data-price="40.000đ"
+                        data-desc="Được đánh giá cao nhất hiện nay, thức ăn tươi Raw Food cho mèo với thành phần tự nhiên, giàu dinh dưỡng và hương vị thơm ngon, là lựa chọn hoàn hảo để cung cấp dinh dưỡng tối ưu cho mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/64.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/64.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Thức ăn tươi Raw Food cho mèo</h3>
+                            <p class="price">40.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thức ăn tươi cho mèo thương hiệu the boss" data-price="67.000đ"
+                        data-desc="Được đánh giá cao nhất hiện nay, thức ăn tươi the boss cho mèo với thành phần tự nhiên, giàu dinh dưỡng và hương vị thơm ngon, là lựa chọn hoàn hảo để cung cấp dinh dưỡng tối ưu cho mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/65.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/65.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Thức ăn tươi cho mèo thương hiệu the boss</h3>
+                            <p class="price">67.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thức ăn tươi MasterCare cho mèo" data-price="40.000đ"
+                        data-desc="Được đánh giá cao nhất hiện nay, thức ăn tươi MasterCare cho mèo với thành phần tự nhiên, giàu dinh dưỡng và hương vị thơm ngon, là lựa chọn hoàn hảo để cung cấp dinh dưỡng tối ưu cho mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/66.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/66.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Thức ăn tươi MasterCare cho mèo</h3>
+                            <p class="price">40.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="banh-thuong" class="product-section">
+                <h2 class="section-title">Bánh thưởng</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Snack bánh thưởng cho mèo CIAO Crab & Squid vị cua và mực
+Thương hiệu CIAO" data-price="35.000đ"
+                        data-desc="Snack bánh thưởng cho mèo CIAO Crab & Squid vị cua và mực với nguyên liệu chính là thịt gà và cá ngừ. Sản phẩm được chế biến thành nhiều hình dạng dim sum và mùi vị khác nhau mà các bé mèo rất thích.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/67.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/67.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Snack bánh thưởng cho mèo CIAO Crab & Squid vị cua và mực</h3>
+                            <p class="price">35.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Bánh thưởng cho mèo Me-O" data-price="11.000đ"
+                        data-desc="Snack mèo này có nhiều hương vị đa dạng làm từ nguyên liệu tươi ngon, được nhà sản xuất Me-O nghiên cứu tập tính, sự ưa thích đặc biệt ghi nhớ trong não mèo, giúp người chủ huấn luyện mèo nhanh chóng, dễ dàng hơn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/68.png" alt="Món ăn">
+                            <img class="img-hover" src="images/68.png" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Bánh thưởng cho mèo Me-O</h3>
+                            <p class="price">11.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Bánh thưởng cho mèo Temptations" data-price="30.000đ"
+                        data-desc="Bánh thưởng cho mèo Temptations với 100% dinh dưỡng cho mèo trưởng thành mang nhiều hương vị thơm ngon phù hợp khẩu vị của các boss nhỏ.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/69.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/69.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Bánh thưởng cho mèo Temptations</h3>
+                            <p class="price">30.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="thit-say" class="product-section">
+                <h2 class="section-title">Thịt sấy khô</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Hỗn hợp thịt sấy khô cho mèo" data-price="50.000đ"
+                        data-desc="Hỗn hợp thịt sấy khô cho mèo với thành phần từ thịt gà, cá ngừ và cá hồi, giàu protein và omega-3, là lựa chọn hoàn hảo để bổ sung dinh dưỡng và làm phong phú bữa ăn của mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/70.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/70.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Hỗn hợp thịt sấy khô cho mèo</h3>
+                            <p class="price">50.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thịt Sấy Khô Cho Mèo Bite Of Wild" data-price="55.000đ"
+                        data-desc="Hỗn hợp thịt sấy khô cho mèo với thành phần từ thịt gà, cá ngừ và cá hồi, giàu protein và omega-3, là lựa chọn hoàn hảo để bổ sung dinh dưỡng và làm phong phú bữa ăn của mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/71.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/71.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Thịt Sấy Khô Cho Mèo Bite Of Wild</h3>
+                            <p class="price">55.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thịt Sấy lạnh Cho Mèo Jinny Freeze Dried" data-price="89.000đ"
+                        data-desc="Được làm từ thịt gà và gan bò thật, thịt sấy lạnh Jinny Freeze Dried cho mèo giữ nguyên hương vị và dinh dưỡng, là lựa chọn tuyệt vời để bổ sung protein và omega-3 vào chế độ ăn của mèo yêu nhà bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/72.png" alt="Món ăn">
+                            <img class="img-hover" src="images/72.png" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Thịt Sấy lạnh Cho Mèo Jinny Freeze Dried</h3>
+                            <p class="price">89.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="thanh-gam" class="product-section">
+                <h2 class="section-title">Thanh gặm sạch răng</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Xương gặm sạch răng cho mèo DentaLife Tasty Chicken
+" data-price="70.000đ"
+                        data-desc="Xương gặm sạch răng cho mèo DentaLife Tasty Chicken được thiết kế đặc biệt với một kết cấu xốp hơn so với xử lý truyền thống. Điều này giúp làm sạch răng hiệu quả hơn, loại bỏ mảng bám và giảm nguy cơ hình thành cao răng, đồng thời cung cấp hương vị gà thơm ngon mà mèo yêu thích.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/73.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/73.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Xương gặm sạch răng cho mèo DentaLife Tasty Chicken</h3>
+                            <p class="price">70.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thanh Gỗ Gặm Thơm Miệng Cho Mèo - Giúp Làm Sạch Răng Miệng, Khử Mùi Hôi" data-price="25.000đ"
+                        data-desc="Giúp Làm Sạch Răng Miệng, Khử Mùi Hôi - Giúp Mèo Thư Giãn">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/74.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/74.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Thanh Gỗ Gặm Thơm Miệng Cho Mèo - Giúp Làm Sạch Răng Miệng, Khử Mùi Hôi</h3>
+                            <p class="price">25.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Xương gặm sạch răng cho chó mèo Dental7 dạng thanh xoắn dài" data-price="50.000đ"
+                        data-desc="Xương gặm sạch răng cho chó mèo Dental7 dạng thanh xoắn dài">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/75.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/75.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Xương gặm sạch răng cho chó mèo Dental7 dạng thanh xoắn dài</h3>
+                            <p class="price">50.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sup-thuong" class="product-section">
+                <h2 class="section-title">Súp thưởng</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Súp thưởng cho mèo Shizuka" data-price="2.000đ"
+                        data-desc="Súp thưởng dạng sệt mềm dễ ăn, phù hợp cho mèo ở mọi lứa tuổi. Giúp kích thích vị giác, hỗ trợ mèo kén...">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/76.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/76.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Súp thưởng cho mèo Shizuka</h3>
+                            <p class="price">2.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="SÚP THƯỞNG ME-O CREAM TREATS CHO MÈO" data-price="12.000đ"
+                        data-desc=" Thức ăn dạng mềm tốt cho hệ tiêu hóa, hạn chế gây khô ruột.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/77.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/77.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>SÚP THƯỞNG ME-O CREAM TREATS CHO MÈO</h3>
+                            <p class="price">12.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Súp thưởng cho mèo CIAO Hairball Control vị thịt gà tiêu búi lông" data-price="40.000đ"
+                        data-desc="Súp thưởng cho mèo CIAO Hairball Control vị thịt gà tiêu búi lông say nhuyễn kết hợp với Oligochitosan và Polyglucose đơn nhất giúp thúc đẩy nhu động đường tiêu hóa của mèo, tiêu nhanh búi lông trong ruột và tiết dịch giúp lông luôn bóng đẹp.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/78.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/78.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Súp thưởng cho mèo CIAO Hairball Control vị thịt gà tiêu búi lông</h3>
+                            <p class="price">40.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gel" class="product-section">
+                <h2 class="section-title">Gel dinh dưỡng</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Gel dinh dưỡng cho mèo bị biếng ăn" data-price="230.000đ"
+                        data-desc="Gel dinh dưỡng cho mèo bị biếng ăn với hương vị thơm ngon, giúp kích thích sự thèm ăn và cung cấp dưỡng chất cần thiết để cải thiện sức khỏe và tăng cường năng lượng cho chó của bạn.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/28.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/28.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Gel dinh dưỡng cho mèo bị biếng ăn</h3>
+                            <p class="price">230.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Gel dinh dưỡng cũng cấp vitamin Nutri" data-price="210.000đ"
+                        data-desc="Gel dinh dưỡng cho mèo cung cấp dưỡng chất cần thiết để cải thiện sức khỏe và tăng cường năng lượng cho mèo của bạn.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/29.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/29.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Gel dinh dưỡng cũng cấp vitamin Nutri</h3>
+                            <p class="price">210.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Gel dinh dưỡng Gimmeo" data-price="170.000đ"
+                        data-desc="Gel dinh dưỡng cho mèo cung cấp dưỡng chất cần thiết để cải thiện sức khỏe và tăng cường năng lượng cho mèo của bạn.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/30.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/30.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Gel dinh dưỡng Gimmeo</h3>
+                            <p class="price">170.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dau-ca" class="product-section">
+                <h2 class="section-title">Dầu cá (Omega-3)</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Viên dầu cá cho chó mèo GymPet" data-price="130.000đ"
+                        data-desc="Dầu cá cho chó mèo giúp giảm hẳn rụng lông sau 2 tuần sử dụng. Chứa nhiều axit béo omega-3 giúp da và lông chắc khỏe, chống rụng lông.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/31.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/31.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Viên dầu cá cho chó mèo GymPet</h3>
+                            <p class="price">130.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Viên dầu cá cho chó Pet Fish Oil" data-price="250.000đ"
+                        data-desc="Dầu cá cho chó mèo giúp giảm hẳn rụng lông sau 2 tuần sử dụng. Chứa nhiều axit béo omega-3 giúp da và lông chắc khỏe, chống rụng lông.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/32.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/32.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Viên dầu cá cho chó mèo Pet Fish Oil</h3>
+                            <p class="price">250.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Viên dầu cá cho chó mèo Brit Care" data-price="400.000đ"
+                        data-desc="Dầu cá cho chó mèo giúp giảm hẳn rụng lông sau 2 tuần sử dụng. Chứa nhiều axit béo omega-3 giúp da và lông chắc khỏe, chống rụng lông.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/33.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/33.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Viên dầu cá cho chó mèo Brit Care</h3>
+                            <p class="price">400.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="canxi" class="product-section">
+                <h2 class="section-title">Canxi & Vitamin</h2>
+                <div class="product-grid">
+
+                    <div class="product-grid">
+                    <div class="food-card" data-name="Viên Bổ Sung Canxi Cho Chó Mèo Calcium Phosphorus PETAG" data-price="290.000đ"
+                        data-desc="Canxi Phốt Pho của hãng PetAg (Mỹ) là canxi hàng đầu trong việc điều trị bệnh liên quan đến hệ thống khung xương của chó mèo như sập bàn, hạ bàn, thiếu canxi, còi xương v...v...">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/34.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/34.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Viên Bổ Sung Canxi Cho Chó Mèo Calcium Phosphorus PETAG</h3>
+                            <p class="price">290.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Canxi delice" data-price="110.000đ"
+                        data-desc="Canxi bổ sung của Mỹ là canxi hàng đầu trong việc điều trị bệnh liên quan đến hệ thống khung xương của chó mèo như sập bàn, hạ bàn, thiếu canxi, còi xương v...v...">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/35.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/35.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Canxi delice</h3>
+                            <p class="price">110.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Viên Bổ Sung Khoáng Spirit" data-price="80.000đ"
+                        data-desc="Viên Bổ Sung Khoáng Spirit giúp bổ sung các khoáng chất cần thiết cho chó, hỗ trợ sức khỏe tổng thể và tăng cường hệ miễn dịch.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/36.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/36.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Viên Bổ Sung Khoáng Spirit</h3>
+                            <p class="price">80.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thuốc bổ sung Vitamin cho chó mèo" data-price="170.000đ"
+                        data-desc="Thuốc bổ sung Vitamin tổng hợp cho chó mèo VEGEBRAND Fruit Vitamin phù hợp với mọi giống chó ở các giai đoạn phát triển.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/37.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/37.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Thuốc bổ sung Vitamin cho chó mèo</h3>
+                            <p class="price">170.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Thuốc bổ sung Vitamin B cho chó mèo" data-price="200.000đ"
+                        data-desc="Thuốc bổ sung Vitamin B cho chó mèo giúp cung cấp các vitamin nhóm B cần thiết để hỗ trợ chức năng thần kinh, tăng cường năng lượng và cải thiện sức khỏe tổng thể cho chó mèo của bạn.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/38.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/38.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Thuốc bổ sung Vitamin B cho chó mèo</h3>
+                            <p class="price">200.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="men-vi-sinh" class="product-section">
+                <h2 class="section-title">Men vi sinh</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Viên Men Vi Sinh Cho Chó Mèo Probisol" data-price="9.000đ"
+                        data-desc="Men vi sinh của hãng PetAg (Mỹ) giúp cải thiện hệ tiêu hóa, tăng cường miễn dịch và hỗ trợ hấp thụ dinh dưỡng cho chó mèo.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/39.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/39.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Viên Men Vi Sinh Cho Chó Mèo Probisol</h3>
+                            <p class="price">9.000đ</p>
+                        </div>
+                    </div>
+                     <div class="food-card" data-name="Men Vi Sinh cho chó mèo Hàn Quốc Cao cấp" data-price="20.000đ"
+                        data-desc="Men vi sinh của hãng t-flora (Mỹ) giúp cải thiện hệ tiêu hóa, tăng cường miễn dịch và hỗ trợ hấp thụ dinh dưỡng cho chó mèo.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/40.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/40.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Men Vi Sinh cho chó mèo Hàn Quốc Cao cấp</h3>
+                            <p class="price">20.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Men Vi Sinh cho chó mèo Biotic" data-price="6.000đ"
+                        data-desc="Men vi sinh của hãng Biotic (Mỹ) giúp cải thiện hệ tiêu hóa, tăng cường miễn dịch và hỗ trợ hấp thụ dinh dưỡng cho chó mèo.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/41.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/41.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Men Vi Sinh cho chó mèo Biotic</h3>
+                            <p class="price">6.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sua-bot" class="product-section">
+                <h2 class="section-title">Sữa bột</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Sữa cho chó mèo Bio Milk" data-price="35.000đ"
+                        data-desc="Với thành phần giàu chất dinh dưỡng, cân đối và rất dễ tiêu hóa tương tự sữa mẹ, có tác dụng thay thế sữa mẹ trong trường hợp chó, mèo mất sữa, kém sữa hoặc thiếu sữa do bầy con quá đông, đồng thời là nguồn bổ sung chất dinh dưỡng cho chó mèo còi cọc, chậm lớn. ">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/79.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/79.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Sữa cho chó mèo Bio Milk</h3>
+                            <p class="price">35.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="SỮA BỘT PRECATEN CHO MÈO" data-price="49.000đ"
+                        data-desc="Cung cấp vitamin A tốt cho mắt và ngăn biến chứng võng mạc, giúp cho da khỏe mạnh và có một bộ lông bóng mượt.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/80.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/80.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>SỮA BỘT PRECATEN CHO MÈO</h3>
+                            <p class="price">49.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Sữa bột Eco Milk chó mèo con dạng gói giúp hỗ trợ tiêu hoá" data-price="120.000đ"
+                        data-desc="Với thành phần giàu chất dinh dưỡng, cân đối và rất dễ tiêu hóa tương tự sữa mẹ, có tác dụng thay thế sữa mẹ trong trường hợp chó, mèo mất sữa, kém sữa hoặc thiếu sữa do bầy con quá đông, đồng thời là nguồn bổ sung chất dinh dưỡng cho chó mèo còi cọc, chậm lớn. ">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/81.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/81.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Sữa bột Eco Milk chó mèo con dạng gói giúp hỗ trợ tiêu hoá</h3>
+                            <p class="price">120.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sua-tuoi" class="product-section">
+                <h2 class="section-title">Sữa tươi tiệt trùng</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Sữa Tươi +Glucosamine cho Mèo Pets Own Úc (Cat & Kitten Milk)" data-price="108.000đ"
+                        data-desc="Sữa Tươi +Glucosamine cho Mèo Pets Own Úc (Cat & Kitten Milk)">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/82.webp" alt="Món ăn">
+                            <img class="img-hover" src="images/82.webp" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Sữa Tươi +Glucosamine cho Mèo Pets Own Úc (Cat & Kitten Milk)</h3>
+                            <p class="price">108.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Sữa Tươi Pha Sẳn Cho Chó Mèo Bổ Sung Canxi, Chắc Xương BIOLINE Pet Milk" data-price="40.000đ"
+                        data-desc="sản phẩm cung cấp dinh dưỡng thiết yếu giúp chó cưng phát triển toàn diện, đặc biệt là xương và răng chắc khỏe.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/47.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/47.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Sữa Tươi Pha Sẳn Cho Chó Mèo Bổ Sung Canxi, Chắc Xương BIOLINE Pet Milk</h3>
+                            <p class="price">40.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Sữa Tươi Tiệt Trùng Nắp Vặn DoggyMan 200ml cho Cún Mèo" data-price="35.000đ"
+                        data-desc="Sữa Tươi Tiệt Trùng Nắp Vặn DoggyMan 200ml cho Cún Mèo với thành phần giàu dinh dưỡng, cân đối và rất dễ tiêu hóa tương tự sữa mẹ, có tác dụng thay thế sữa mẹ trong trường hợp chó, mèo mất sữa, kém sữa hoặc thiếu sữa do bầy con quá đông, đồng thời là nguồn bổ sung chất dinh dưỡng cho chó mèo còi cọc, chậm lớn. ">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/83.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/83.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Sữa Tươi Tiệt Trùng Nắp Vặn DoggyMan 200ml cho Cún Mèo</h3>
+                            <p class="price">35.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="bat-an" class="product-section">
+                <h2 class="section-title">Bát ăn</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Bát ăn hình chó vui nhộn" data-price="95.000đ"
+                        data-desc="Bá size nhỏ, phù hợp cho chó nhỏ và mèo. Thiết kế hình chó vui nhộn tạo điểm nhấn đáng yêu cho bữa ăn của thú cưng.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/48.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/48.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Bát ăn hình chó vui nhộn</h3>
+                            <p class="price">95.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Bát ăn màu hồng chân cao" data-price="80.000đ"
+                        data-desc="Bát ăn màu hồng, chân cao, phù hợp cho chó nhỏ và mèo. Thiết kế hiện đại.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/49.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/49.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Bát ăn màu hồng chân cao</h3>
+                            <p class="price">80.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Bát ăn hình thú chân cao" data-price="30.000đ"
+                        data-desc="Bát ăn hình thú, chân cao, phù hợp cho chó nhỏ và mèo. Thiết kế hiện đại.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/50.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/50.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Bát ăn hình thú chân cao</h3>
+                            <p class="price">30.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="may-loc" class="product-section">
+                <h2 class="section-title">Máy lọc nước tự động</h2>
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Máy lọc nước tự động nhỏ gọn" data-price="1.900.000đ"
+                        data-desc="Phù hợp cho nhà nuôi ít thú cưng hoặc không gian nhỏ. Thiết kế nhỏ gọn, dễ dàng đặt ở bất kỳ đâu trong nhà.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/51.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/51.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Máy lọc nước tự động nhỏ gọn</h3>
+                            <p class="price">1.900.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Máy lọc nước tự động họa tiết con ong" data-price="1.500.000đ"
+                        data-desc="Phù hợp cho nhà nuôi ít thú cưng hoặc không gian nhỏ. Thiết kế nhỏ gọn, dễ dàng đặt ở bất kỳ đâu trong nhà.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/52.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/52.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Máy lọc nước tự động họa tiết con ong</h3>
+                            <p class="price">1.500.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Máy lọc nước tự động 4 vòi phun" data-price="2.400.000đ"
+                        data-desc="Phù hợp cho nhà nuôi nhiều thú cưng hoặc không gian rộng. Thiết kế hiện đại, nhiều vòi phun tạo sự hứng thú cho thú cưng khi uống nước.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/53.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/53.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Máy lọc nước tự động 4 vòi phun</h3>
+                            <p class="price">2.400.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="may-hen-gio" class="product-section">
+                <h2 class="section-title">Máy hẹn giờ</h2>
+
+                <div class="product-grid">
+
+                    <div class="food-card" data-name="Máy hẹn giờ cho chó ăn dung tích lớn" data-price="5.000.000đ"
+                        data-desc="Máy hẹn giờ cho chó ăn dung tích lớn với thiết kế hiện đại, giúp bạn dễ dàng lên lịch cho bữa ăn của thú cưng, đảm bảo chúng luôn được cung cấp thức ăn đúng giờ và đủ lượng cần thiết.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/54.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/54.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Máy hẹn giờ cho chó ăn dung tích lớn</h3>
+                            <p class="price">5.000.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Máy hẹn giờ cho chó ăn dung tích vừa" data-price="4.000.000đ"
+                        data-desc="Máy hẹn giờ cho chó ăn dung tích vừa với thiết kế hiện đại, giúp bạn dễ dàng lên lịch cho bữa ăn của thú cưng, đảm bảo chúng luôn được cung cấp thức ăn đúng giờ và đủ lượng cần thiết.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/55.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/55.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Máy hẹn giờ cho chó ăn dung tích vừa</h3>
+                            <p class="price">4.000.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Máy hẹn giờ tích hợp camera" data-price="7.000.000đ"
+                        data-desc="Máy hẹn giờ tích hợp camera với thiết kế hiện đại, giúp bạn dễ dàng lên lịch cho bữa ăn của thú cưng, đảm bảo chúng luôn được cung cấp thức ăn đúng giờ và đủ lượng cần thiết. Camera tích hợp cho phép bạn theo dõi thú cưng khi ăn, mang lại sự an tâm và tiện lợi tối đa.">
+
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/56.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/56.jpg" alt="Chi tiết">
+                        </div>
+
+                        <div class="card-info">
+                            <h3>Máy hẹn giờ tích hợp camera</h3>
+                            <p class="price">7.000.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="simple-footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h2>Liên Hệ Với Chúng Tôi</h2>
+                    <br>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <p><strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <p><strong>Điện thoại:</strong> <a href="tel:0123456789">0123 456 789</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <p><strong>Email:</strong> <a href="mailto:info@yourbrand.com">info@yourbrand.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">⏰</span>
+                        <p><strong>Giờ mở cửa:</strong> 08:00 - 21:00 (Thứ 2 - Chủ Nhật)</p>
+                    </div>
+                </div>
+
+                <div class="footer-maps">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.2713293381285!2d106.61532917480635!3d10.866955689287412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752a1094db353d%3A0x580ce254dd601dfd!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBMYW8gxJHhu5luZyBYw6MgaOG7mWkgLSBDxqEgc-G7nyAy!5e0!3m2!1svi!2s!4v1776677618679!5m2!1svi!2s"
+                        width="700" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </footer>
+
+        <div id="detail-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-image-area">
+                        <img id="modal-img" src="" alt="Sản phẩm">
+                    </div>
+                    <div class="modal-text-area">
+                        <h2 id="modal-name"></h2>
+                        <p class="modal-price" id="modal-price-big"></p>
+                        <p id="modal-desc"></p>
+                        <button class="btn-order" onclick="addToCartFromModal(); return false;">Thêm vào giỏ
+                            hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="danh-muc.js"></script>
+        <script src="hang.js"></script>
+
+    </body>
+
+</html>

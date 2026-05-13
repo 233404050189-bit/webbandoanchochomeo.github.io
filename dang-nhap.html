@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập - Pet Mall</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-overlay" id="loginOverlay">
+        
+        <div class="login-glass-card" id="loginCard">
+            <div class="avatar-header">
+                <i class="fa-solid fa-paw"></i>
+            </div>
+            
+            <h2>Chào mừng bạn!</h2>
+            <p class="subtitle">Đăng nhập để tiếp tục cùng Pet Mall</p>
+
+            <form id="loginForm">
+                <div class="input-box">
+                    <input type="email" required placeholder="Email của bạn">
+                </div>
+                <div class="input-box">
+                    <input type="password" required placeholder="Mật khẩu">
+                </div>
+                
+                <button type="submit" class="btn-glow">Đăng nhập</button>
+                
+                <div class="footer-links">
+                    <a href="#">Quên mật khẩu?</a>
+                    <span>•</span>
+                    <a href="#">Đăng ký mới</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

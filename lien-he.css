@@ -1,0 +1,72 @@
+body {
+    /* Câu lệnh thêm ảnh nền */
+    background-image: url('images/Screenshot\ 2026-04-10\ 161504.png'); /* Thay tên file ảnh của bạn vào đây */
+    
+    /* Các lệnh bổ trợ để ảnh nền đẹp hơn */
+    background-size: cover;          /* Giúp ảnh che phủ toàn bộ màn hình */
+    background-position: center;    /* Căn ảnh ở chính giữa */
+    background-attachment: fixed;   /* Giữ ảnh cố định khi bạn cuộn trang */
+    background-repeat: no-repeat;   /* Không cho ảnh lặp lại */
+    
+    /* Các thuộc tính cũ giữ nguyên */
+    font-family: 'Segoe UI', sans-serif;
+    display: flex; 
+    justify-content: center; 
+    padding: 40px 20px;
+}
+
+.form-container {
+    background: white; width: 100%; max-width: 550px;
+    padding: 35px; border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    opacity: 0; transform: translateY(20px);
+    transition: all 0.7s ease-out;
+}
+
+.form-container.active { opacity: 1; transform: translateY(0); }
+
+h2 { color: #b35444; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 10px; text-align: center; }
+
+.section-header { font-weight: bold; color: #b35444; margin: 25px 0 10px 0; }
+
+.form-group { margin-bottom: 15px; }
+
+/* PHẦN LÀM Ô NGẮN LẠI */
+.form-row {
+    display: flex;
+    gap: 15px; /* Tạo khoảng cách giữa 2 ô */
+}
+.form-row .form-group {
+    flex: 1; /* Mỗi ô chiếm 50% chiều ngang */
+}
+
+label { display: block; font-weight: bold; margin-bottom: 5px; color: #444; font-size: 14px; }
+.required { color: #b35444; }
+
+input, select, textarea {
+    width: 100%; padding: 12px 18px;
+    border: 1px solid #ddd; border-radius: 30px; /* Bo tròn kiểu viên thuốc */
+    font-size: 15px; outline: none; background: #fff;
+    box-sizing: border-box; /* Quan trọng để không bị tràn khung */
+}
+
+textarea { border-radius: 20px; resize: none; }
+
+.checkbox-container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    background: #fffcfb; padding: 15px; border-radius: 15px; border: 1px dashed #ddd;
+}
+.check-item { display: flex; align-items: center; font-size: 14px; cursor: pointer; }
+.check-item input { width: auto; margin-right: 8px; }
+
+.agreement { display: flex; align-items: center; gap: 8px; margin-top: 20px; }
+.agreement input { width: auto; }
+
+button {
+    width: 100%; padding: 16px; background-color: #b35444;
+    color: white; border: none; border-radius: 12px;
+    font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px;
+}
+
+.error-msg { color: #b35444; font-size: 12px; display: none; margin-top: 5px; }
+input.invalid { border: 1.5px solid #b35444; }

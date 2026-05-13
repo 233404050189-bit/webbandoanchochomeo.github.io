@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetShop - Cửa hàng thú cưng</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet" href="danh-muc.css">
+
+</head>
+
+<body>
+
+    <header>
+        <header class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="images/logo.webp" alt="PetShop Logo">
+                </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Tìm món ăn...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <img src="images/tinnhan.png" class="nav-img">
+                        <span>Hỗ trợ 24/7</span>
+                        <span class="chevron">⌵</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <p class="title-text">Nhận hỗ trợ từ các chuyên gia của chúng tôi 24/7.</p>
+
+                        <div class="support-cards-wrapper">
+                            <a href="https://zalo.me/0386559999" class="s-card chat" target="_blank">
+                                <div class="s-icon">
+                                    <span class="pulse-wave"></span>
+                                    <img src="images/tinnhan.png" class="item-img">
+                                </div>
+                                <div class="s-info">
+                                    <span class="s-label">Chat ngay</span>
+                                    <span class="s-status">Online trực tuyến</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:0386559999" class="s-card phone">
+                                <div class="s-icon">
+                                    <img src="images/dienthoai.png" class="item-img phone-ring">
+                                </div>
+                                <div class="s-info">
+                                    <span class="s-label">Gọi hotline</span>
+                                    <span class="s-status">0386.559.999</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <img src="images/dangnhap.png" class="user-avatar">
+                        <span class="btn-text">Tài khoản ⌵</span>
+                    </button>
+
+                    <div class="dropdown-content">
+
+
+                        <a href="dang-nhap.html" class="auth-btn login-btn">Đăng nhập</a>
+
+                        <a href="dang-ky.html" class="auth-btn register-btn">Tạo tài khoản</a>
+                    </div>
+                </div>
+
+                <div class="nav-container">
+                    <a href="gio-hang.html" class="cart-btn">
+                        <div class="cart-icon-wrapper">
+                            <span style="font-size: 24px;">🛒</span>
+                            <span class="cart-count" id="main-cart-count">0</span>
+                        </div>
+                        <span class="cart-label">Giỏ hàng</span>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="has-submenu">
+                        <a href="san-pham-noi-bat.html">Sản phẩm nổi bật ⌵</a>
+                        <ul class="submenu standard-menu">
+                            <li><a href="san-pham-noi-bat.html#ban-chay">Sản phẩm bán chạy</a></li>
+                            <li><a href="san-pham-noi-bat.html#hang-moi">Hàng mới về</a></li>
+                            <li><a href="san-pham-noi-bat.html#khuyen-mai">Khuyến mãi sốc</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="danh-cho-cho.html">Dành cho chó ⌵</a>
+                        <div class="submenu mega-menu">
+                            <div class="mega-col">
+                                <span class="mega-title">Thức ăn</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#thuc-an-hat">Thức ăn hạt</a></li>
+                                    <li><a href="danh-cho-cho.html#pate">Pate và thức ăn ướt</a></li>
+                                    <li><a href="danh-cho-cho.html#thuc-an-tuoi">Thức ăn tươi</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">Đồ ăn vặt & Thưởng</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#banh-thuong">Bánh thưởng</a></li>
+                                    <li><a href="danh-cho-cho.html#thit-say">Thịt sấy khô</a></li>
+                                    <li><a href="danh-cho-cho.html#thanh-gam">Thanh gặm sạch răng</a></li>
+                                    <li><a href="danh-cho-cho.html#sup-thuong">Súp thưởng</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">TPCN & Dinh dưỡng</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#gel">Gel dinh dưỡng</a></li>
+                                    <li><a href="danh-cho-cho.html#dau-ca">Dầu cá (Omega-3)</a></li>
+                                    <li><a href="danh-cho-cho.html#canxi">Canxi & Vitamin</a></li>
+                                    <li><a href="danh-cho-cho.html#men-vi-sinh">Men vi sinh</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">Sữa và đồ uống</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#sua-bot">Sữa bột</a></li>
+                                    <li><a href="danh-cho-cho.html#sua-tuoi">Sữa tươi tiệt trùng</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">Phụ kiện</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#bat-an">Bát ăn</a></li>
+                                    <li><a href="danh-cho-cho.html#may-loc">Máy lọc nước tự động</a></li>
+                                    <li><a href="danh-cho-cho.html#may-hen-gio">Máy hẹn giờ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="danh-cho-cho.html">Dành cho mèo ⌵</a>
+                        <div class="submenu mega-menu">
+                            <div class="mega-col">
+                                <span class="mega-title">Thức ăn</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#thuc-an-hat">Thức ăn hạt</a></li>
+                                    <li><a href="danh-cho-cho.html#pate">Pate và thức ăn ướt</a></li>
+                                    <li><a href="danh-cho-cho.html#thuc-an-tuoi">Thức ăn tươi</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">Đồ ăn vặt & Thưởng</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#banh-thuong">Bánh thưởng</a></li>
+                                    <li><a href="danh-cho-cho.html#thit-say">Thịt sấy khô</a></li>
+                                    <li><a href="danh-cho-cho.html#thanh-gam">Thanh gặm sạch răng</a></li>
+                                    <li><a href="danh-cho-cho.html#sup-thuong">Súp thưởng</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">TPCN & Dinh dưỡng</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#gel">Gel dinh dưỡng</a></li>
+                                    <li><a href="danh-cho-cho.html#dau-ca">Dầu cá (Omega-3)</a></li>
+                                    <li><a href="danh-cho-cho.html#canxi">Canxi & Vitamin</a></li>
+                                    <li><a href="danh-cho-cho.html#men-vi-sinh">Men vi sinh</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">Sữa và đồ uống</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#sua-bot">Sữa bột</a></li>
+                                    <li><a href="danh-cho-cho.html#sua-tuoi">Sữa tươi tiệt trùng</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <span class="mega-title">Phụ kiện</span>
+                                <ul class="child-menu">
+                                    <li><a href="danh-cho-cho.html#bat-an">Bát ăn</a></li>
+                                    <li><a href="danh-cho-cho.html#may-loc">Máy lọc nước tự động</a></li>
+                                    <li><a href="danh-cho-cho.html#may-hen-gio">Máy hẹn giờ</a></li>
+                                </ul>
+                            </div>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="pettag.html">Pettag ⌵</a>
+                        <ul class="submenu standard-menu">
+                            <li><a href="pettag.html#the-ten">Thẻ tên chó/mèo</a></li>
+                            <li><a href="pettag.html#vong-co">Vòng cổ khắc tên</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="dich-vu-spa.html">Dịch vụ spa ⌵</a>
+                        <ul class="submenu standard-menu">
+                            <li><a href="dich-vu-spa.html#tam-cat">Tắm & cắt spa chó/mèo</a></li>
+                            <li><a href="dich-vu-spa.html#dua-don">Dịch vụ đưa đón</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="khuyen-mai.html">Khuyến mãi ⌵</a>
+                        <ul class="submenu standard-menu">
+                            <li><a href="khuyen-mai.html#combo">Mua 1 tặng 1</a></li>
+                            <li><a href="khuyen-mai.html#dung-thu">Hàng dùng thử</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="lien-he.html">Liên hệ đặt lịch</a></li>
+
+                    <li><span class="free-ship-btn">Miễn phí vận chuyển đơn trên 500.000đ</span></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <div class="breaking-news">
+
+            <div class="container-flex">
+
+                <div class="marquee">
+
+                    <p>Tặng thẻ quà tặng điện tử trị giá 200.000đ khi mua hàng từ 1.500.000đ trở lên.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="slider-container">
+
+            <div class="slider-wrapper" id="sliderWrapper">
+
+                <div class="slide"><img src="images/cho.jpg" alt="1"></div>
+
+                <div class="slide"><img src="images/cho.jpg" alt="2"></div>
+
+                <div class="slide"><img src="images/cho.jpg" alt="3"></div>
+
+            </div>
+
+            <div class="slider-controls">
+                <button id="playPauseBtn" onclick="togglePlayPause()">
+                    <div id="btnIcon" class="pause-icon"></div>
+                </button>
+                <div class="indicator-bar">
+                    <span class="bar active" onclick="currentSlide(0)"></span>
+                    <span class="bar" onclick="currentSlide(1)"></span>
+                    <span class="bar" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slider-controls">
+            <div class="indicator-bar">
+                <span class="bar active"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        </div>
+
+        <section class="pet-selection">
+
+            <h2>Giới thiệu thành viên nhóm</h2>
+
+            <div class="pet-grid">
+                <a href="Phạm Ngọc Linh" class="pet-item">
+                    <img src="images/S1.jpg" alt="Phạm Ngọc Linh">
+                    <p>Phạm Ngọc Linh</p>
+                </a>
+
+                <a href="Lương Ngọc Linh" class="pet-item">
+                    <img src="images/S3.jpg" alt="Lương Ngọc Linh">
+                    <p>Lương Ngọc Linh</p>
+                </a>
+                <a href="Nguyễn Ngọc Hân" class="pet-item">
+                    <img src="images/S2.jpg" alt="Nguyễn Ngọc Hân">
+                    <p>Nguyễn Ngọc Hân</p>
+                </a>
+            </div>
+
+            <section class="popular-categories">
+                <h2>Khám phá các danh mục phổ biến</h2>
+
+                <div class="category-grid">
+                    <a href="khuyen-mai.html" class="cat-item">
+                        <div class="circle-img"><img src="images/sale.jpg" alt="Sale"></div>
+                        <p>Khuyến mãi</p>
+                    </a>
+
+                    <a href="danh-cho-cho.html" class="cat-item">
+                        <div class="circle-img"><img src="images/cho.jpg" alt="Thức ăn"></div>
+                        <p>Dành cho chó</p>
+                    </a>
+
+                    <a href="danh-cho-meo.html" class="cat-item">
+                        <div class="circle-img"><img src="images/meo.webp" alt="Meo"></div>
+                        <p>Dành cho mèo</p>
+                    </a>
+
+                    <a href="pettag.html" class="cat-item">
+                        <div class="circle-img"><img src="images/vongco.jpg" alt="Pettag"></div>
+                        <p>Pettag</p>
+                    </a>
+
+                    <a href="dich-vu-spa.html" class="cat-item">
+                        <div class="circle-img"><img src="images/84.jpg" alt="Dịch vụ"></div>
+                        <p>Dịch vụ</p>
+                    </a>
+
+                    <a href="lien-he.html" class="cat-item">
+                        <div class="circle-img"><img src="images/dienthoai.png" alt="Đặt lịch"></div>
+                        <p>Đặt lịch</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="video-promo-section">
+
+                <div class="video-container">
+
+
+
+                    <div class="video-box">
+
+                        <video controls poster="video/PETCO_ROGUE_REBRAND_PROMO15_16x9.webm" id="promotionalVideo">
+
+                            <source src="video/PETCO_ROGUE_REBRAND_PROMO15_16x9.webm" type="video/mp4">
+
+                            Trình duyệt của bạn không hỗ trợ video HTML5.
+
+                        </video>
+
+                    </div>
+
+
+
+                    <div class="text-box">
+
+                        <h2 class="title">"Get Real™ – Thực phẩm tươi, đơn giản đến không ngờ</h2>
+
+                        <p class="description">
+
+                            Việc cho chó cưng ăn thực phẩm tươi, đạt chuẩn người chưa bao giờ dễ đến thế. Sản phẩm được làm từ thịt thật, rau củ và trái cây tươi, đa dạng hương vị hấp dẫn, cùng phần ăn chia sẵn giúp hạn chế tối đa bừa bộn. Hãy thử ngay hôm nay – Giảm 50% cho đơn hàng đầu tiên.
+
+                        </p>
+
+                        <a href="#" class="shop-now-btn">Shop now</a>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <section class="full-width-image">
+                <img src="images/Screenshot 2026-04-10 161504.png" alt="Banner Ngang" class="horizontal-img">
+
+                <button class="btn-shop"
+                    onclick="window.location.href='http://127.0.0.1:5500/NHOM7-BAN-THUC-AN-CHO-MEO/san-pham-noi-bat.html'">Mua
+                    ngay</button>
+            </section>
+
+            <section class="product-showcase">
+                <div class="section-header">
+                    <h2>Một số sản phẩm nổi bật</h2>
+                    <a href="san-pham-noi-bat.html" class="view-all">Xem tất cả →</a>
+                </div>
+
+                <div class="product-grid" id="featured-products-container">
+
+                    <div class="food-card" data-name="Hạt mèo Cat'eyes" data-price="300.000đ"
+                        data-desc="Túi 1kg dành cho mèo mọi lứa tuổi, cung cấp dinh dưỡng cân đối với protein từ thịt gà và cá, giúp duy trì sức khỏe và năng lượng cho mèo yêu của bạn.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/57.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/57.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt mèo Cat'eyes</h3>
+                            <p class="price">300.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Hạt Zoicat cho mèo" data-price="320.000đ"
+                        data-desc="Hạt xuất khẩu từ Nhật Bản, túi 1kg, giàu protein từ cá và thịt gà, bổ sung vitamin và khoáng chất giúp mèo phát triển khỏe mạnh và năng động.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/58.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/58.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt Zoicat cho mèo</h3>
+                            <p class="price">320.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Hạt Cat Licious vị cá biển" data-price="300.000đ"
+                        data-desc="Túi 1kg, hạt dinh dưỡng cao với protein từ cá biển, bổ sung omega-3 và vitamin giúp mèo duy trì sức khỏe lông mượt và năng lượng dồi dào.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/59.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/59.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt Cat Licious vị cá biển</h3>
+                            <p class="price">300.000đ</p>
+                        </div>
+                    </div>
+                    <div class="food-card" data-name="Hạt Catsrang vị cá biển" data-price="200.000đ"
+                        data-desc="Túi 1kg, hạt dinh dưỡng cao với protein từ cá biển, bổ sung omega-3 và vitamin giúp mèo duy trì sức khỏe lông mượt và năng lượng dồi dào.">
+                        <div class="image-wrapper">
+                            <img class="img-main" src="images/60.jpg" alt="Món ăn">
+                            <img class="img-hover" src="images/60.jpg" alt="Chi tiết">
+                        </div>
+                        <div class="card-info">
+                            <h3>Hạt Catsrang vị cá biển</h3>
+                            <p class="price">200.000đ</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <div id="detail-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div class="modal-body">
+                        <div class="modal-img-area">
+                            <img id="modal-img" src="" alt="Sản phẩm">
+                        </div>
+                        <div class="modal-text-area">
+                            <h2 id="modal-name"></h2>
+                            <p id="modal-price-big" class="modal-price"></p>
+                            <p id="modal-desc"></p>
+                            <button id="add-to-cart-btn" class="btn-order">THÊM VÀO GIỎ HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="comparison-section">
+                <div class="comparison-container">
+                    <div class="text-header">
+                        <h1>Bạn không nên là người duy nhất ăn uống lành mạnh.</h1>
+                        <p>Cũng như bạn, chúng tôi yêu quý thú cưng của mình và quan tâm đến sức khỏe của chúng.</p>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="icon-group left">
+                            <div class="icon-item">
+                                <img src="images/thuc-pham-that.png" alt="Icon nấu chín" class="icon-custom">
+                                <div>
+                                    <h3>Thực phẩm thật</h3>
+                                    <p>Thịt và rau củ chất lượng cho chó.</p>
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <img src="images/an-toan.png" alt="Icon nấu chín" class="icon-custom">
+                                <div>
+                                    <h3>An toàn cấp độ người</h3>
+                                    <p>Sự an toàn và chất lượng chưa từng có dành cho thú cưng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-comparison">
+                            <img src="images/hat-thuc-an.jpg" class="img-after" alt="Cooked Food">
+                            <div class="img-before-wrapper">
+                                <img src="images/thit-rau-cu.png" class="img-before" alt="Fresh Ingredients">
+                            </div>
+                        </div>
+
+                        <div class="icon-group right">
+                            <div class="icon-item">
+                                <img src="images/nau-chin.png" alt="Icon nấu chín" class="icon-custom">
+                                <div>
+                                    <h3>Nấu chín</h3>
+                                    <p>Duy trì tính toàn vẹn của thực phẩm và giá trị dinh dưỡng.</p>
+                                </div>
+                            </div>
+                            <div class="icon-item">
+                                <img src="images/bac-si.png" alt="Icon nấu chín" class="icon-custom">
+                                <div>
+                                    <h3>Bác sĩ thú y</h3>
+                                    <p>Dinh dưỡng vượt trội so với tiêu chuẩn.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="service-section">
+
+                <h2 class="service-title">Nuôi thú cưng trở nên dễ dàng hơn</h2>
+
+                <div class="service-grid">
+
+                    <div class="service-item">
+
+                        <div class="service-card">
+
+                            <img src="images/dichvuchamsoc.jpg"
+                                alt="CS 24/7">
+
+                        </div>
+
+                        <p>Dịch vụ chăm sóc khách hàng 24/7 đạt giải thưởng</p>
+
+                    </div>
+
+
+
+                    <div class="service-item">
+
+                        <div class="service-card">
+
+                            <img src="images/bacsithuy.jpg"
+                                alt="Vet Chat">
+
+                        </div>
+
+                        <p>Trò chuyện miễn phí với đội ngũ bác sĩ thú y</p>
+
+                    </div>
+
+
+
+                    <div class="service-item">
+
+                        <div class="service-card">
+
+                            <img src="images/thuoc.jpg"
+                                alt="Pharmacy">
+
+                        </div>
+
+                        <p>Thuốc theo toa, giao hàng nhanh chóng</p>
+
+                    </div>
+
+
+
+                    <div class="service-item">
+
+                        <div class="service-card">
+
+                            <img src="images/insurance.jpg"
+                                alt="Insurance">
+
+                        </div>
+
+                        <p>Khám phá bảo hiểm thú cưng</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+    </main>
+    <footer class="simple-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>Liên Hệ Với Chúng Tôi</h2>
+                <br>
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <p><strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <p><strong>Điện thoại:</strong> <a href="tel:0123456789">0123 456 789</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <p><strong>Email:</strong> <a href="mailto:info@yourbrand.com">info@yourbrand.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="icon">⏰</span>
+                    <p><strong>Giờ mở cửa:</strong> 08:00 - 21:00 (Thứ 2 - Chủ Nhật)</p>
+                </div>
+            </div>
+
+            <div class="footer-maps">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.2713293381285!2d106.61532917480635!3d10.866955689287412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752a1094db353d%3A0x580ce254dd601dfd!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBMYW8gxJHhu5luZyBYw6MgaOG7mWkgLSBDxqEgc-G7nyAy!5e0!3m2!1svi!2s!4v1776677618679!5m2!1svi!2s"
+                    width="700" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+    <script src="danh-muc.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

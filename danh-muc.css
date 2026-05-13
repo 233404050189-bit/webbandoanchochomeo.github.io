@@ -1,0 +1,210 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fdfdfd;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.title { text-align: center; margin-bottom: 50px; font-weight: 400; }
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.food-card {
+    width: 280px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Hiệu ứng đổi ảnh */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #f2f2f2;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.image-wrapper img {
+    width: 70%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.img-hover {
+    opacity: 0;
+    transform: translate(-50%, -40%) !important; /* Hơi lệch một chút để tạo cảm giác trượt */
+}
+
+.food-card:hover .img-main {
+    opacity: 0;
+}
+
+.food-card:hover .img-hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Tên món ăn ở giao diện chính */
+.card-info h3 { 
+    font-size: 1.2rem;       /* Tăng kích thước một chút */
+    font-weight: 800;       /* Làm chữ cực đậm (Extra Bold) */
+    margin: 12px 0 5px; 
+    color: #1a1a1a;         /* Màu đen đậm hơn để nổi bật trên nền trắng */
+    text-transform: uppercase; /* (Tùy chọn) Viết hoa để trông chuyên nghiệp hơn */
+    letter-spacing: 0.5px;  /* Giãn chữ một chút cho dễ đọc */
+}
+
+/* Giá tiền ở giao diện chính */
+.card-info .price { 
+    color: #e67e22;         /* Đổi sang màu cam để đồng nhất với giá trong Popup */
+    font-size: 1rem; 
+    font-weight: 600;       /* Làm giá tiền cũng đậm hơn một chút */
+}
+
+/* Modal Chi Tiết */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.95); /* Nền trắng trong suốt sang trọng */
+    align-items: center; justify-content: center;
+}
+
+.modal-content {
+    width: 800px;
+    max-width: 90%;
+    position: relative;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.modal-img-area img { width: 350px; }
+
+.modal-text-area { text-align: left; }
+
+#modal-name { 
+    font-size: 2.8rem; 
+    font-weight: 900;       /* Độ đậm tối đa */
+    margin-bottom: 10px; 
+    color: #000;
+    line-height: 1.1;
+}
+#modal-price-big { font-size: 1.5rem; color: #e67e22; font-weight: 600; }
+#modal-desc { line-height: 1.8; color: #666; margin: 20px 0; }
+
+.btn-order {
+    background: #000;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: -50px; right: 0;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-body { flex-direction: column; text-align: center; }
+    .modal-text-area { text-align: center; }
+}
+
+
+.pet-item {
+    text-decoration: none; /* Bỏ gạch chân link */
+    color: inherit;        /* Giữ màu chữ như ban đầu */
+    display: block;        /* Giúp toàn bộ khung có thể click được */
+}
+
+.pet-item:hover {
+    opacity: 0.8;          /* Hiệu ứng mờ nhẹ khi di chuột vào để người dùng biết là click được */
+    transform: scale(1.05); /* Phóng to nhẹ một chút cho sinh động */
+    transition: 0.3s;
+}
+.category-grid a.cat-item {
+    text-decoration: none; /* Xóa gạch chân */
+    color: inherit;        /* Lấy màu chữ từ phần cha, không bị đổi màu xanh */
+    display: flex;         /* Giữ cấu trúc giống div cũ */
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Hiệu ứng khi rê chuột vào cho chuyên nghiệp */
+.cat-item:hover .circle-img {
+    transform: translateY(-5px); /* Hình ảnh nhích lên một chút */
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Thêm đổ bóng nhẹ */
+}
+#modal-img {
+    width: 100%;       /* Ảnh chỉ rộng bằng khung Modal */
+    max-height: 400px; /* Giới hạn chiều cao */
+    object-fit: contain; /* Giữ nguyên tỉ lệ ảnh không bị móp */
+}
+.search-box {
+    display: flex;
+    width: 500px ;    /* Thử con số này */
+    max-width: 100% ; /* Đảm bảo không bị giới hạn bởi max-width cũ */
+    margin: 20px auto; 
+    border: 2px solid #040138;
+    border-radius: 20px;
+    padding: 5px 15px;
+    background: white;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: #040138;
+    cursor: pointer;
+}
+.circle-img {
+  width: 100px;          /* kích thước mong muốn */
+  height: 100px;
+  border-radius: 50%;    /* tạo hình tròn */
+  overflow: hidden;      /* ẩn phần ảnh thừa ra ngoài */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* ảnh co dãn để phủ kín hình tròn, cắt bớt phần thừa nhưng giữ tỷ lệ */
+}
